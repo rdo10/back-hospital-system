@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\controllers\HospitalesController;
+use App\Http\controllers\MedicosController;
+use App\Http\controllers\PacienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,7 @@ Route::get('/', function () {
     return "<h1>Vista principal</h1>";
 });
 
-Route::get('/hospitales', function () {
-
-});
+Route::get('/hospitales',[HospitalesController::class,'index'])->middleware(['cors' ]);
+Route::get('/medicos',[MedicosController::class,'index'])->middleware(['cors' ]);
+Route::get('/medicos-hospitales/{id}',[HospitalesController::class,'medicosHospital'])->middleware(['cors' ]);
+Route::get('/pacientes',[PacienteController::class,'index'])->middleware(['cors' ]);

@@ -17,4 +17,9 @@ class Medico extends Model
     public function cargo(){
         return $this->belongsTo('App\Models\Cargo');
     }
+
+     //relacion uno a muchos
+    public function citas(){
+        return $this->hasMany('App\Models\Cita'); 
+    }
 }

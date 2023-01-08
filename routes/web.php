@@ -23,3 +23,4 @@ Route::get('/hospitales',[HospitalesController::class,'index'])->middleware(['co
 Route::get('/medicos',[MedicosController::class,'index'])->middleware(['cors' ]);
 Route::get('/medicos-hospitales/{id}',[HospitalesController::class,'medicosHospital'])->middleware(['cors' ]);
 Route::get('/pacientes',[PacienteController::class,'index'])->middleware(['cors' ]);
+Route::get('/pacientes-medicos/{id}',[MedicosController::class,'pacienteMedicos'])->middleware(['cors' ]);

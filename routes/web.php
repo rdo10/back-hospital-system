@@ -20,7 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('/hospitales',[HospitalesController::class,'index'])->middleware(['cors' ]);
+Route::get('/hospital/{id}',[HospitalesController::class,'getHospital'])->middleware(['cors' ]);
+Route::delete('/hospital/{id}',[HospitalesController::class,'destroy'])->middleware(['cors' ]);
 Route::get('/medicos',[MedicosController::class,'index'])->middleware(['cors' ]);
 Route::get('/medicos-hospitales/{id}',[HospitalesController::class,'medicosHospital'])->middleware(['cors' ]);
 Route::get('/pacientes',[PacienteController::class,'index'])->middleware(['cors' ]);
 Route::get('/pacientes-medicos/{id}',[MedicosController::class,'pacienteMedicos'])->middleware(['cors' ]);
+Route::post('/hospitales',[HospitalesController::class,'create']);

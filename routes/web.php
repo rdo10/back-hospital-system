@@ -19,11 +19,12 @@ Route::get('/', function () {
     return "<h1>Vista principal</h1>";
 });
 
-Route::get('/hospitales',[HospitalesController::class,'index'])->middleware(['cors' ]);
-Route::get('/hospital/{id}',[HospitalesController::class,'getHospital'])->middleware(['cors' ]);
-Route::delete('/hospital/{id}',[HospitalesController::class,'destroy'])->middleware(['cors' ]);
-Route::get('/medicos',[MedicosController::class,'index'])->middleware(['cors' ]);
-Route::get('/medicos-hospitales/{id}',[HospitalesController::class,'medicosHospital'])->middleware(['cors' ]);
-Route::get('/pacientes',[PacienteController::class,'index'])->middleware(['cors' ]);
-Route::get('/pacientes-medicos/{id}',[MedicosController::class,'pacienteMedicos'])->middleware(['cors' ]);
+Route::get('/hospitales',[HospitalesController::class,'index']);
+Route::get('/hospital/{id}',[HospitalesController::class,'getHospital']);
+Route::delete('/hospital/{id}',[HospitalesController::class,'destroy']);
+Route::put('/hospital/{id}',[HospitalesController::class,'update']);
+Route::get('/medicos',[MedicosController::class,'index']);
+Route::get('/medicos-hospitales/{id}',[HospitalesController::class,'medicosHospital']);
+Route::get('/pacientes',[PacienteController::class,'index']);
+Route::get('/pacientes-medicos/{id}',[MedicosController::class,'pacienteMedicos']);
 Route::post('/hospitales',[HospitalesController::class,'create']);

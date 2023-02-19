@@ -126,7 +126,8 @@ class HospitalesController extends Controller
      $data = [
         'code' => 200,
         'status' => 'success',
-        'message' => 'hospital actualizado'
+        'message' => 'hospital actualizado',
+        'object' => $hospital
       ];
     }else{
       $data = [

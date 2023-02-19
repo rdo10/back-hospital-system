@@ -36,7 +36,7 @@ class HospitalesController extends Controller
     if (!empty($params)) {
 
       $validate =  Validator::make($params, [
-        'nombre' => 'required | unique',
+        'nombre' => 'required',
         'ciudad' => 'required',
         'nit' => 'required'
       ]);
@@ -114,7 +114,7 @@ class HospitalesController extends Controller
 
       unset($params['id']);
       unset($params['created_at']);
-      
+
      $hospital =  Hospital::where('id', $id)->update($params);
       
      $data = [
